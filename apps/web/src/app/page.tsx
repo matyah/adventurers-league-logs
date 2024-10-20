@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Card } from "@repo/ui/card";
-import { fetchQuery } from "@repo/convex-api/next-js";
-import { api } from "@repo/convex-api/api";
+import { Login } from "../components/login";
 
 function Gradient({
   conic,
@@ -45,9 +44,7 @@ const LINKS = [
   },
 ];
 
-export default async function Page(): Promise<JSX.Element> {
-  const characters = await fetchQuery(api.characters.get);
-  console.log("characters", characters);
+export default function Page(): JSX.Element {
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <div className="z-10 items-center justify-between w-full max-w-5xl font-mono text-sm lg:flex">
@@ -137,6 +134,7 @@ export default async function Page(): Promise<JSX.Element> {
           </Card>
         ))}
       </div>
+      <Login />
     </main>
   );
 }
