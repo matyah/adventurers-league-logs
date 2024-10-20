@@ -7,9 +7,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@repo/ui/accordion";
-import { Button } from "@repo/ui/button";
 import Image from "next/image";
 import { Hero } from "./hero";
+import { CreateCharacterButton } from "./create-character-button";
 
 // TODO: Add a footer
 // TODO: Add an animation each time a section is in view
@@ -17,6 +17,7 @@ import { Hero } from "./hero";
 
 export function Landing(): JSX.Element {
   const moreInfoRef = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <Hero
@@ -122,7 +123,7 @@ export function Landing(): JSX.Element {
           <p>
             Create the hero you always dreamed of and record his achievements.
           </p>
-          <Button className="mt-8">Create a character</Button>
+          <CreateCharacterButton />
         </div>
       </section>
       {/* Footer */}

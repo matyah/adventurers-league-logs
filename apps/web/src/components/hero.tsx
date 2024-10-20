@@ -1,18 +1,12 @@
 "use client";
 
-import { useCallback } from "react";
-import { Button } from "@repo/ui/button";
-import { authenticate } from "../lib/actions";
+import { CreateCharacterButton } from "./create-character-button";
 
 export function Hero({
   onMoreInfoClick,
 }: {
   onMoreInfoClick?: () => void;
 }): JSX.Element {
-  const loginIn = useCallback(async () => {
-    await authenticate().catch(console.error);
-  }, []);
-
   return (
     <div
       className="h-screen bg-cover bg-no-repeat bg-center text-[#F5ECD2]"
@@ -27,14 +21,7 @@ export function Hero({
             Create your characters and record your sessions for free, with no
             limits.
           </h2>
-          <Button
-            className="text-[#F5ECD2] font-bold"
-            onClick={loginIn}
-            size="lg"
-            variant="default"
-          >
-            Create a character
-          </Button>
+          <CreateCharacterButton />
 
           <button
             className="mt-20 animate-bounce cursor-pointer flex items-center justify-center flex-col gap-1"
